@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="matter">
+       <!-- <div class="regform"><h2>PARKING LOT MANAGEMENT SYSTEM</h2></div>
+        <div class="main">
+            <form>-->
+        <section class="indatd">
+            <div class="regform">
+                <h2>PARKING LOT MANAGEMENT SYSTEM</h2>
+            </div>
+        <table class="main">
+            <tr>
+                <td>
+                    <div class="uname">Name :</div>
+                </td>
+                <td>
+                    <input type="text" id="uname" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="vname">Vehicle Name :</div>
+                </td>
+                <td>
+                    <input type="text" id="vname" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="vno">Vehicle Number :</div>
+                </td>
+                <td>
+                    <input type="text" id="vno" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="edate">Entry Date :</div>
+                </td>
+                <td>
+                    <input type="date" id="edate" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="xdate">Exit Date : </div>
+                </td>
+                <td>
+                    <input type="date" id="xdate" >
+                </td>
+            </tr>
+        </table>
+         <section class="main"><button id="submit"> Submit </button></section>
+                
+    </section>
+    <section class="tadetails">
+        <table id="display" class="main">
+            <tr>
+                <th>Name</th>
+                <th>Vehicle Name</th>
+                <th>Vehicle Name</th>
+                <th>Entry Date</th>
+                <th>Exit Date</th>
+            </tr>
+        </table>
+    </section>
+</section>
+    <script>
+        var row =1;
+        var enter = document.getElementById("submit");
+        enter.addEventListener("click",ddisplay);
+        
+        function ddisplay()
+        {
+            var name = document.getElementById("uname").value;
+            var vname = document.getElementById("vname").value;
+            var vno = document.getElementById("vno").value;
+            var Edate = document.getElementById("edate").value;
+            var Xdate = document.getElementById("xdate").value;
+            if(!name || !vname || !vno || !Edate || !Xdate)
+            {
+                alert("Please Enter all Details !!");
+                return;
+            }
+            var display = document.getElementById("display");
+            var nrow = display.insertRow(row);
+            nrow.insertCell(0).innerHTML = name ;
+            nrow.insertCell(1).innerHTML = vname ;
+            nrow.insertCell(2).innerHTML = vno ;
+            nrow.insertCell(3).innerHTML = Edate ;
+            nrow.insertCell(4).innerHTML = Xdate ;
+
+            row++;
+        }
+    </script>
+</body>
+</html>
